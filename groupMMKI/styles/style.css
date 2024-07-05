@@ -1,0 +1,966 @@
+/*共通基本ルール
+余白：4倍数
+PCコンテンツ幅：1200px
+font: Zen Kaku Gothic New
+font-size: ベースSP12px　PC20px
+                 4の倍数
+見出しfont-size: SP→24,12px,PC→48.24px
+SP幅:375px 
+PC幅:1366px
+
+007AB7　青
+6CBAD8 の透明度20％　水色
+
+000000　黒
+FFFFFF　白
+007AB7　の透明度90％　濃いめの水色
+
+EDA184　の透明度20％　ピンク
+
+64C99B　の透明度20％　パステルグリーン
+
+F4F4F4　白
+000000　の透明度25％　薄いグレー
+8F8F8F　グレー
+
+*/
+
+/* h1>見出し(Gallery,Event,Travel)　h2>"Formosa"　h3>イベント名　h4>"開催期間" h5>"ファルモサ（麗しの島）" h6>開催日時 */
+
+/* ローティング仕様 */
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #007AB7;
+    display: flex;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingBox img {
+    text-align: center;
+    width: 287px;
+}   
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1; 
+    }
+
+    80% {
+        opacity: 1; 
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.animationLoading {
+    animation: fadeInOut 3s ease;
+}
+
+
+.onlyPC {
+    display: none;
+}
+
+body{
+    width: 375px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden; /* ドロワーメニュー対応　横スクロールバーを非表示 */
+}
+
+/*header部分のCSS*/
+header{
+    max-width: 768px;
+    height: 667px;
+    width: 100%;
+    background: url(../images/spHero.png) no-repeat right center/cover;
+    position: relative;
+    padding-top: 4px;
+}
+
+/*ドロワーメニュー*/
+
+.line {
+    display: block;
+    width: 60%;
+    background-color: white; /* 線の色 */
+    border-radius: 2px; /* 線の角を丸める */
+    margin: 10px 10px; /* 線の間隔を調整 */
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 100%; /* 画面幅一杯に広げる */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px; /* To accommodate header */
+    transition: right 0.3s ease;
+    z-index: 900; /* 他の要素より手前に表示 */
+    background-image: url(../images/taiwanLogo.svg); /* 画像のパスを指定 */
+    background-repeat: no-repeat;
+    background-position: top left; /* 右上に配置 */
+}
+
+.navigation nav {
+  padding: 20px;
+}
+
+.navigation nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navigation nav ul li {
+  margin-bottom: 10px;
+}
+
+.navigation nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.isOpen {
+  right: 0;
+}
+
+.menu {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.top {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.policy {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.navButton {
+    background-image: url(../images/drawerIcon.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 300px;
+    top: 5px;
+}
+.closeBtn{
+    background-image: url(../images/drawerClose.svg);
+}
+/*ドロワーメニューここまで*/
+
+header h1{
+    position:absolute;
+    top: 116px;
+    left:68px;
+}
+header .snsIcons{
+    position:absolute;
+    bottom:70px;
+}
+header .snsIcons nav ul li{
+    margin-bottom:20px;
+}
+
+.mainLogo { 
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    width: 100%; 
+    height: auto;
+}
+
+h1,h2,h3,h4,h5 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    padding: 8px;
+}
+
+.sub { /* 見出しの小文字部分 */
+    font-size: 12px;
+}
+
+.h1Background { /* 見出しの背景画像 */
+    width: 220px;
+    height: 40px;
+    background-image: url(../images/sph1BackImage.png);
+    background-size: contain;
+    margin: 0 auto 60px;
+}
+
+.gallerySec { /* 見出し上の余白 */
+    padding-top: 28px;
+}
+.travelSec { /* 見出し上の余白 */
+    padding-top: 28px;
+}
+.eventSec { /* 見出し上の余白 */
+    padding-top: 28px;
+}
+
+h2 { /* "Formosa" */
+    font-size: 20px;
+    margin: 0 auto 20px;
+}
+
+h3 { /* イベント名 */
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+h4 { /* "開催期間" */
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h5 { /* "ファルモサ（麗しの島）" */
+    position: relative;
+    font-size: 12px;
+}
+
+h5::after { /* 下線 */
+    content: "";
+    display: block;
+    width: 132px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -12px;
+    left: 121px;
+}
+
+h6 { /* 開催日時 */
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.mainText { /* 紹介文（複数個所） */
+    position: relative;
+    width: 223px;
+    margin: 0 auto 52px;
+    padding-top: 0px;
+    font-size: 12px;
+}
+.mainText::before { /* 上線 */
+    content: "";
+    display: block;
+    width: 223px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    top: -12px;
+    left: 0px;
+}
+.mainText::after { /* 下線 */
+    content: "";
+    display: block;
+    width: 223px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -12px;
+    left: 0px;
+}
+
+.upper { /* 紹介上段 */
+    width: 375px;
+    height: 407px;
+    background-image: url(../images/spBackImage1.png);
+    background-size: cover;
+    padding-top: 20px;
+}
+
+.lower { /* 紹介下段 */
+    padding-top: 32px;
+    width: 375px;
+    height: 399px;
+    background-image: url(../images/spBackImage2.png);
+    background-size: cover;
+}
+
+.topImg img { /* 紹介画像 */
+    display: block;
+    width: 335px;
+    height: 139px;
+    margin: 60px auto;
+}
+
+.topFlag img { /* 国旗 */
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.map {
+    position: relative;
+    width: 180px;
+    height: 355px;
+    background-image: url(../images/spMap.png);
+    background-size: cover;
+    background-position: right;
+    margin: 72px auto 112px;
+}
+.map img { /* リンク画像のサイズ*/
+    width: 59px;
+    height: 126px;
+}
+.taipei {
+    position: absolute;
+    top: 55px;
+    left: 159px;
+}
+.taichu {
+    position: absolute;
+    top: 82px;
+    right: 158px;
+}
+.tainan {
+    position: absolute;
+    top: 281px;
+    left: 15px;
+}
+
+.under { /* マップ下の区切り線 */
+    padding-bottom: 60px;
+}
+.under::after { /* マップ下の区切り線 */
+    content: "";
+    display: block;
+    width: 223px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 76px;
+}
+
+.eventSec img { /* イベント画像 */
+    display: block;
+    width: 335px;
+    height: 194px;
+    margin: 0 auto 20px;
+}
+
+.infoBoder { /* 基本情報 */
+    width: 335px;
+    border: 1px solid #8F8F8F;
+    padding: 20px 20px 40px;
+    margin: 0 20px 60px;
+}
+.infoSec ul li { /* 基本情報内のリスト */
+    list-style-type: none;
+    color: #000000;
+    font-size: 12px;
+}
+.infoUpper {
+    margin: 0 0 40px 0;
+}
+
+/* スライドショー */
+body,ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* */
+/* ↓ スライドの外枠 */
+.slideWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.indicatorWrapper { /* インジケータ―の親要素 */
+    position: relative;
+}
+
+/*  ↓ スライド（コンテンツ） */
+
+.slide { /*スライド全体 */
+    width: 500%;
+    height: 467px;
+    display: flex;
+    transition: all 0.3s;
+}
+.slide div { /* スライド */
+    width: 100%; /* 335px */
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+.slide1 { 
+    transform: translateX(0);
+}
+.slide2 { 
+    transform: translateX(-20%);
+}
+.slide3 { 
+    transform: translateX(-40%);
+}
+.slide4 { 
+    transform: translateX(-60%);
+}
+.slide5 { 
+    transform: translateX(-80%);
+}
+
+/* ↓ インジケーター */
+.indicator {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    column-gap: 18px;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+.indicator li {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    list-style: none;
+    background-color: #8f8f8f;
+    cursor: pointer;
+    margin: 0 15px;
+}
+.indicator li:first-of-type {
+    background-color: #000000;
+}
+
+/* スライドここまで */
+
+.pageTop {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    z-index: 150;
+}
+.pageTop img {
+    width: 48px;
+    height: 48px;
+}
+
+/*footer部分のCSS*/
+footer{
+    max-width: 768px;
+    background-color: #007AB7;
+    color:#FFFFFF;
+    text-align: center;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
+.footerContainer{
+    /* border-left: 1px solid #FF0000;
+    border-right: 1px solid #FF0000; */
+    margin:0 20px;
+}
+
+.flag {
+    margin:0 auto;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.flag img{
+    width: 34px;
+    height: 24px;
+}
+
+.footerNav{
+    width: 195px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: left;
+}
+.footerNav ul{
+    padding-left: 0;
+}
+.footerNav nav ul li{
+    width:100%;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom:6px;
+    margin-top:12px;
+}
+
+.footerUnder{
+    display:flex;
+}
+.footerLogo{
+    width: 71px;
+    height: 28px;
+    background: url(../images/spFooterLogo.png) no-repeat right center/cover;
+    margin-right:24px;
+}
+.snsNav ul{
+    display:flex;
+    justify-content: space-between;
+    width:143px;
+    padding:0;
+    margin:0;
+}
+.snsNav ul li img{
+    display:block;
+    width: 32px;
+    height: 32px;
+
+}
+.footerContainer > p{
+    margin-top:24px;
+    margin-bottom: 12px;
+}
+
+@media screen and (min-width:768px) {
+    .onlyPC {
+        display: block;
+    }
+    .onlySP {
+        display: none;
+    }
+    body {
+        width: 1366px;
+    }
+
+    header{
+        position: relative;
+        background-image: url(../images/pcHero.png);
+        max-width: 1366px;
+        width: 100%;
+        height: 100vh;
+    }
+    .headerContainer {
+        width: 100%;
+        /* border: 1px solid #FF0000; */
+        border-bottom: none;
+        margin: 0 83px;
+    }
+
+    .mainLogo { 
+        text-align: center;
+    }
+    .mainLogo img {
+        width: 50%;
+        height: 50%;
+    }
+
+    /* 結合ドロワーメニュー */
+    header .headerContainer .logo img{
+        width: 133px;
+        height: 54px;
+    }
+    header .headerContainer .logo{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    } 
+    .navButton,
+    .menu{
+        display:none;
+    }
+    header .navigation{
+        position:absolute;
+        top:0px;
+        left:30%;
+        background: none;
+        height:auto;
+        margin:0;
+        padding:0;
+    }
+    .globalNav ul{
+        display: flex;
+        width: 644px;
+        justify-content: space-between;
+    }
+    .globalNav ul li{
+        margin:0;
+        list-style: none;
+    }
+    .globalNav ul li a{
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color:#FFFFFF;
+        text-decoration: none;
+    }
+
+    .upper {
+        display: flex;
+        width: 100%;
+        height: 458px;
+        background-image: url(../images/pcBackImage1.png);
+        padding: 0;
+    }
+    .upperContainer { /* 上段枠線*/
+        display: flex;
+        padding-top: 80px;
+        width: 100%;
+        /* border-left: 1px solid #FF0000;
+        border-right: 1px solid #FF0000; */
+        margin:0 83px;
+    }
+    .lower {
+        display: flex;
+        width: 100%;
+        height: 458px;
+        background-image: url(../images/pcBackImage2.png);
+        padding-top: 80px;
+    }
+    .topFlag img{
+        display: block;
+        width: 104px;
+        height: 78px;
+        margin: 0 240px 100px 200px;
+    }
+    .text { /* 国旗&テキスト*/
+        display: block;
+    }
+    .topImg img{ /* 紹介画像 */
+        width: 636px;
+        height: 298px;
+        margin: 0 20px 0 0;
+    }
+    h2 { /* Formosa */
+        font-size: 48px;
+        text-align: left;
+        margin: 0 0 20px 20px;
+    }
+    h5 { /* ファルモサ（麗しの島） */
+        font-size: 32px;
+        text-align: left;
+        margin: 0 0 100px 20px;
+    }
+    h5::after { /* 下線 */
+        width: 361px;
+        left: 0px;
+    }
+    .mainText { /* 紹介文（複数個所） */
+        position: relative;
+        width: 420px;
+        height: 160px;
+        padding-top: 0px;
+        font-size: 20px;
+    }
+    .mainText::before { /* 上線 */
+        width: 420px;
+        top: -60px;
+        left: 0px;
+    }
+    .mainText::after { /* 下線 */
+        width: 420px;
+        bottom: -60px;
+        left: 0px;
+    }
+
+    .lower .mainText {
+        margin: 60px 104px 0;
+    }
+    h1 { /* 見出し(Gallery,Event,Travel) */
+        font-size: 48px;
+        padding: 24px;
+    }
+    .sub { /* 見出しの小文字部分 */
+        font-size: 24px;
+    }
+    .h1Background { /* 見出しの背景画像 */
+        width: 530px;
+        height: 96px;
+        background-image: url(../images/pchBackImage.png);
+        background-size: contain;
+        margin: 0 auto 60px;
+    }
+    .gallery {
+        margin: 0 733px 160px 103px;
+    }
+    .travel {
+        margin: 0 103px 120px 733px;
+    }
+    .travelContent {
+        display: flex;
+    }
+    .travelSec .mainText {
+        margin: auto;
+    }
+    .under { /* マップ下の区切り線 */
+        padding-bottom: 60px;
+    }
+    .under::after { /* マップ下の区切り線 */
+        content: "";
+        display: block;
+        width: 223px;
+        height: 1px;
+        background-color: #000000;
+        position: absolute;
+        left: 76px;
+    }
+    .map {
+        width: 225px;
+        height: 508px;
+        background: url(../images/pcMap.png) no-repeat center/contain;
+        margin: 0 auto 183px;
+    }
+    .map img { /* リンク画像のサイズ*/
+        width: 99px;
+        height: 209px;
+    }
+    .taipei {
+        top: 61px;
+        left: 222px;
+    }
+    .taichu {
+        top: 90px;
+        right: 205px;
+    }
+    .tainan {
+        top: 402px;
+        left: 16px;
+    }
+    .under { /* マップ下の区切り線 */
+        margin: 0 auto;
+        padding-bottom: 80px;
+    }
+    .under::after { /* マップ下の区切り線 */
+        content: "";
+        display: block;
+        width: 480px;
+        height: 1px;
+        background-color: #000000;
+        position: absolute;
+        left: 443px;
+    }
+    .eventSec {
+        padding: 0 103px;
+    }
+    .event {
+        margin: 0 733px 160px 0;
+    }
+    h3 {
+        font-size: 36px;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    .eventInfo {
+        display: flex;
+        margin-bottom: 80px;
+    }
+    .eventSec img { /* イベント画像 */
+        width: 580px;
+        height: 396px;
+        margin: 0 auto 20px;
+    }
+    h4,h6 {
+        font-size: 20px;
+    }
+    h4 { /* "開催期間" */
+        margin-bottom: 32px;
+    }
+    h6 {
+        margin-bottom: 64px;
+    }
+    .eventSec .mainText {
+        width: 314px;
+        height: 192px;
+        margin: 0 auto;
+    }
+    .eventText {
+        padding-top: 31px;
+        margin: 0 auto;
+    }
+
+    .eventSec .mainText::before { /* 上線 */
+        width: 314px;
+        top: -32px;
+        left: 0px;
+    }
+    .eventSec .mainText::after { /* 下線 */
+        width: 314px;
+        bottom: -32px;
+        left: 0px;
+    }
+    .infoBoder {
+        width: 1040px;
+        height: 560px;
+        margin: 0 auto 80px;
+    }
+    .information {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+    }
+    .infoUpper {
+        width: 450px;
+        height: 320px;
+    }
+    .infoLower {
+        width: 450px;
+        height: 320px;
+    }
+    .infoSec h3 {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .infoSec ul li { /* 基本情報内のリスト */
+        font-size: 20px;
+    }
+
+    .pageTop img { /* トップへ戻るボタンのサイズ */
+        width: 100px;
+        height: 100px;
+    }
+    
+    
+    /* */
+    /* スライド部分 */
+    .gallerySec { /* 余白 */
+        padding-bottom: 80px;
+    }
+    .slide {
+        position:relative;
+        width: 135%;
+        margin:0 auto 60px;
+    }
+    .slide div {
+        display: block;
+        text-align: left;
+    }
+
+    .slider1,.slider2,.slider3,.slider4,.slider5 {
+        /* border:1px solid #000000; */
+        position: absolute;
+    }
+
+
+    /* ↓ 左右のボタン（onlyPC）*/
+    .prev {
+        position: absolute;
+        left: 30%;
+        bottom: 50%;
+        z-index: 100;
+        cursor: pointer;
+    }
+    .next {
+        position: absolute;
+        right: 30%;
+        bottom: 50%;
+        z-index: 100;
+        cursor: pointer;
+    }
+    .indicatorWrapper img { /* ボタンのサイズ */
+        width: 64px;
+        height: 64px;
+    }
+
+    .position1 {
+        left: -220px;
+    }
+    .position2 {
+        left: 159px;
+    }
+    .position3 {
+        left: 535px;
+    }
+    .position4 {
+        left: 909px;
+    }
+    .position5 {
+        left: 1274px;
+    }
+
+    #prev {
+        background-image: url(../images/pcLeftBtn.svg);
+        width:64px;
+        height:64px;
+        border: none;
+    }
+    #next {
+        background-image: url(../images/pcRightBtn.svg);
+        width:64px;
+        height:64px;
+        border: none;
+    }
+
+    /* footer */
+    footer {
+        max-width: 1366px;
+    }
+    .footerContainer{
+        margin:0 83px;
+        height: 100%;
+    }
+    .pcFooterContents{
+        display:flex;
+        justify-content:left;
+    }
+    .footerNav{
+        margin:0;
+        margin-left:20px;
+        margin-bottom:20px;
+        flex-basis: 33%;
+    }
+    .footerNav nav{
+        width: 100%;
+    }
+    .footerUnder{
+        flex-basis:66%;
+        display:flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-left: 50px;
+    }
+    .footerLogo{
+        width: 256px;
+        height:103px;
+        margin-right:0;
+    }
+    .footerNav nav ul li{
+        width: 332px;
+        border-bottom: 1px solid #ffffff;
+        margin-top: 12px;
+    }
+    .flag img {
+        width: 64px;
+        height: 48px;
+    }
+}
