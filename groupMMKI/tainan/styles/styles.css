@@ -1,0 +1,838 @@
+/*
+使用するカラー
+#007AB7 濃い青
+#6CBAD8 footer
+#000000
+#FFFFFF
+
+#007AB7の透明度90%
+#EDA184の透明度20%
+#64C99Bの透明度20%
+
+#F4F4F4
+#000000の透明度25%
+#8F8F8F
+sp:max-width:768px
+*/
+/*google fontsの設定*/
+body{
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden; /* ドロワーメニュー対応　横スクロールバーを非表示 */
+}  
+/* mobile first*/
+/*header部分のCSS*/
+/*ドロワーメニュー*/
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    width: 100%; /* 画面幅一杯に広げる */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px; /* To accommodate header */
+    transition: left 0.3s ease;
+    z-index: 500; /* 他の要素より手前に表示 */
+    background-image: url(../images/taiwanLogo.svg); /* 画像のパスを指定 */
+    background-repeat: no-repeat;
+    background-position: top left; /* 右上に配置 */
+}
+
+.navigation nav {
+  padding: 20px;
+}
+
+.navigation nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navigation nav ul li {
+  margin-bottom: 10px;
+}
+
+.navigation nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+
+.isOpen {
+  left: 0;
+}
+
+.menu {
+color: #fff;
+font-size: 24px;
+text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.top {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.policy {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+
+
+.navButton {
+background-image: url(../images/drawerIcon.svg);
+background-repeat: no-repeat;
+z-index: 510;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+left: 300px;
+top: 5px;
+}
+.closeBtn{
+    background-image: url(../images/drawerClose.svg);
+}
+/*ドロワーメニューここまで*/
+
+header{
+    max-width: 768px;
+    height: 667px;
+    width:100%;
+    background: url(../images/spHeroImg.png) no-repeat right center/cover;
+    position:relative;
+    padding-top: 4px;
+}
+.headerContainer{
+    margin:0 20px 0 20px;
+    height: 663px;
+    border: 1px solid #FF0000;
+    border-bottom: none;
+}
+header h1{
+    position:absolute;
+    top: 116px;
+    left:68px;
+}
+header .snsIcons{
+    position:absolute;
+    left: 20px;;
+    bottom:70px;
+}
+header .snsIcons nav ul{
+    padding-left: 0;
+}
+header .snsIcons nav ul li{
+    margin-bottom:20px;
+    list-style: none;
+}
+
+header .cityGuide{
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    position:absolute;
+    bottom:0;
+    width: 247px;
+    right:20px;
+}
+/* ローティング仕様 */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    bottom: 0;
+    right: 0;
+    background: #007AB7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:600;
+  }
+  
+  .loadingBox img {
+    text-align: center;
+    width: 287px;
+    z-index:610;
+  }   
+  
+  
+  @keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+  
+    50% {
+        opacity: 1; 
+    }
+    
+    80% {
+      opacity: 1; 
+  }
+    100% {
+        opacity: 0;
+    }
+  }
+  
+  .animation_loading {
+    animation: fadeInOut 3s ease;
+  }
+  /*ローディング画面ここまで*/
+/*パンくずナビゲーション*/
+.mainContainer{
+    margin:0 20px;
+    border-left: 1px solid #FF0000;
+    border-right: 1px solid #FF0000;
+}
+.breadCrumb{
+    width:100%;
+    border-bottom: 1px solid #000000;
+}
+.breadCrumb nav ul{
+    display:flex;
+    padding:8px 0;
+    margin:0;
+}
+.breadCrumb nav ul li{
+    list-style: none;
+}
+.breadCrumb nav ul li a{
+    text-decoration: none;
+    color:#000000;
+}
+/*main部分*/
+main{
+    margin-bottom:10px;
+}
+.containerBottomLine{
+    border-bottom: 1px solid #FF0000;
+}
+/*footer部分のCSS*/
+footer{
+    max-width: 768px;
+    background-color: #007AB7;
+    color:#FFFFFF;
+    text-align: center;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
+.footerContainer{
+    border-left: 1px solid #FF0000;
+    border-right: 1px solid #FF0000;
+    margin:0 20px;
+}
+
+.flag{
+    margin:0 auto;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.flag img{
+    width: 34px;
+    height: 24px;
+}
+
+.footerNav{
+    width: 195px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: left;
+}
+.footerNav ul{
+    padding-left: 0;
+}
+.footerNav nav ul li{
+    width:100%;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom:6px;
+    margin-top:12px;
+}
+
+.footerUnder{
+    display:flex;
+}
+.footerLogo{
+    width: 71px;
+    height: 28px;
+    background: url(../images/spFooterLogo.png) no-repeat right center/cover;
+    margin-right:24px;
+}
+.snsNav ul{
+    display:flex;
+    justify-content: space-between;
+    width:143px;
+    padding:0;
+    margin:0;
+}
+
+.snsNav ul li img{
+    display:block;
+    width: 32px;
+    height: 32px;
+
+}
+
+.footerContainer > p{
+    margin-top:24px;
+    margin-bottom: 12px;
+}
+
+.footerContainer .copyRight{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin:0;
+}
+
+/*main部分*/
+main section .attraction,
+main section .gourmet,
+main section .pickup{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 40px;
+    margin:0 auto;
+    background: url(../images/spHeaderBackground.svg) no-repeat right center/cover;
+}
+h2{
+    font-size:24px;
+}
+h3{
+    font-size: 12px;
+}
+h4{
+    font-size: 24px;
+    font-weight: bold;
+    margin:20px auto 0;
+    text-align: center;
+}
+.mainImage{
+    margin-top: 20px;
+}
+
+.mainImage img{
+    width:295px;
+    height:221px;
+    margin:0;
+}
+.subImage{
+    display:flex;
+    justify-content: space-between;
+    width:295px;
+    margin-top: 20px;
+}
+.subImage img{
+    width:137px;
+    height: 150px;
+}
+.tainanAttrction article{
+    width: 295px;
+    margin:0 auto;
+}
+.tainanAttrction p{
+    background-color: rgba(100,201,115,.2);
+    width: 295px;
+    padding:8px 36px;
+    font-size: 12px;
+    margin-top:20px;
+}
+.tainanGourmet .gourmetDescription{
+    margin:60px auto;
+    font-size: 12px;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding:12px 0;
+    width: 223px;
+}
+.tainanGourmet h4{
+    font-size:32px;
+}
+.tainanGourmet h5{
+    font-size: 16px;
+    text-align: center;
+}
+.tainanGourmet img{
+    width:335px;
+    height:130px;
+
+}
+.shopDescription{
+    width:223px;
+    margin:8px auto 0;
+    padding-bottom: 20px;
+    border-bottom:1px solid #000000;
+}
+.shopDescription p{
+    font-size: 12px;
+}
+.textPosition{
+    text-align: right;
+}
+.tainanPickUp h4{
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid #000000;
+    width: 223px;
+    padding-bottom:12px;
+}
+.pcOnly{
+    display:none;
+}
+.tainanPickUp p{
+    margin:20px auto;
+    width:223px;
+
+}
+.tainanPickUp .pickupDescription{
+    margin:12px auto 40px;
+}
+.tainanPickUp .mainImage img{
+    width:223px;
+    height: 132px;
+    margin:0 auto;
+}
+.tainanPickUp .subImage{
+    display:flex;
+    width:335px;
+    margin:0 auto;
+    justify-content: space-evenly;
+}
+.tainanPickUp .subImage img{
+    width:158px;
+    height:81px;
+}
+.tainanPickUp .minSizeImage{
+    text-align: center;
+
+}
+.tainanPickUp .minSizeImage img{
+    width:175px;
+    height: 122px;
+}
+
+.underLine{
+    width:223px;
+    height:auto;
+    border-top: 1px solid #000000;
+    margin:40px auto 30px;
+}
+
+/*Modal Window CSS*/
+.modalWindow{
+    display:none;/*初期状態はModalWindowは非表示*/
+}
+
+.modalLink{
+    cursor: pointer;/*カーソルをポインタ表示にする*/
+}
+.modalWindow p{
+    position:absolute;
+    top: 46px;
+    right:46px;
+}
+.modalWindow p img{
+    width: 283px;
+    height:283px;
+}
+
+.modalWindow .closeModal{
+    z-index:110;/*絶対閉じられるように手前に置く*/
+    position:absolute;
+    display:block;
+    top: 8px;
+    right:8px;
+    width:28px;
+    height:28px;
+    background-image: url(../images/modalCloseButton.svg);
+}
+.modalBackground{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0,0,0,.7);
+    z-index:90;/*openWindowより下に表示する*/
+    animation:fadein 0.3s ease-in-out forwards;/* アニメーションを設定 */
+}
+.openWindow{
+    display:block;
+    position:fixed;
+    top:218px;
+    left:0;
+    width:375px;
+    height:375px;
+    background-color: rgba(255,255,255,.7);
+    z-index:100;
+    animation:fadein 0.3s ease-in-out forwards;/* アニメーションを設定 */
+}
+/*
+.fadeoutWindow{
+    animation:fadeout 0.3s ease-in-out forwards;
+}
+*/
+/*モーダルウィンドウが表示されるときのアニメーション*/
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}*/
+
+@media screen and (min-width:769px){
+    /* ヘッダー部分 */
+    header{
+        max-width: 1366px;
+        height: 768px;
+        width:100%;
+        background: url(../images/pcHeroImg.png) no-repeat right center/cover;
+        position:relative;
+    }
+    .headerContainer{
+        margin:0 83px;
+        height: 100%;
+        border-right: 1px solid #FF0000;
+        border-left: 1px solid #FF0000;
+        position:relative;
+    }    
+    header .headerContainer .logo img{
+        width:133px;
+        height: 54px;
+    }
+    header .headerContainer .logo{
+        position:absolute;
+        top:20px;
+        left:20px;
+    } 
+    .navButton,
+    .menu{
+        display:none;
+    }
+    header .navigation{
+        position:absolute;
+        top:20px;
+        left:35%;
+        background: none;
+        height:auto;
+        margin:0;
+        padding:0;
+
+    }
+
+    .globalNav ul{
+        display: flex;
+        width: 644px;
+        justify-content: space-between;
+    }
+    .globalNav ul li{
+        margin:0;
+        list-style: none;
+    }
+    .navigation nav ul li a{
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color:#FFFFFF;
+        text-decoration: none;
+        border-bottom:0px;
+    }
+    header .snsIcons{
+        position:absolute;
+        bottom:80px;
+    }
+    header .snsIcons nav ul li{
+        margin-bottom:30px;
+    }
+    header h1{
+        position:absolute;
+        top: 94px;
+        left:280px;
+    }    
+    header h1 img{
+        width: 300px;
+        height: 540px;
+    }
+    header .cityGuide{
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: bold;
+        position:absolute;
+        bottom:20px;
+        right:20px;
+        width: 467px;  
+    }
+    /* パンくず */
+    .breadCrumb nav ul{
+        padding-top:20px;
+        padding-bottom: 18px;
+        margin:0;
+    }
+    .breadCrumb nav ul li a{
+        font-size:20px;
+        margin-right: 3px;
+    }
+    .mainContainer{
+        margin:0 83px;
+        height: 100%;
+        border-right: 1px solid #FF0000;
+        border-left: 1px solid #FF0000;
+    }
+    main{
+        margin-bottom:0;
+    }
+    .containerBottomLine{
+        border-bottom: none;
+    }    
+    /* footer */
+    footer{
+        max-width: 1366px;
+    }
+    .footerContainer{
+        margin:0 83px;
+        height: 100%;
+    }
+    .pcFooterContents{
+        display:flex;
+        justify-content:left;
+    }
+    .footerNav{
+        margin:0;
+        margin-left:20px;
+        margin-bottom:20px;
+        flex-basis: 33%;
+    }
+    .footerNav nav{
+        width: 100%;
+    }
+    .footerUnder{
+        flex-basis:66%;
+        display:flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .footerLogo{
+        width: 256px;
+        height:103px;
+        margin-right:0;
+    }
+    /*Topへもどるボタン*/
+    .returnTop{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        transition: 0.3s 0;
+    }
+/*メイン部分*/
+    main section .attraction,
+    main section .pickup{
+        margin:0;
+    }
+    main section article h4{
+        margin:80px 0 0;
+        text-align: left;
+    }
+    .tainanAttrction article{
+        max-width: 1160px;
+        width:100%;
+    }
+    .mainContainer{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .anpeirou1,
+    .anpeirou2,
+    .sekkanrou1,
+    .sekkanrou2{
+        display:flex;
+        max-width:1160px;
+        max-height: 304px;
+        justify-content: space-between;
+    }
+    .anpeirou1,
+    .sekkanrou1{
+        margin-top:20px;
+    }
+    .anpeirou2,
+    .sekkanrou2{
+        margin-top:40px;
+    }
+    .mainImage{
+        flex-basis: 50%;
+        margin-top: 0;
+    }
+    .mainImage img{
+        width:100%;
+        height:100%;
+    }
+    .anpeirou1 p,
+    .anpeirou2 p,
+    .sekkanrou1 p,
+    .sekkanrou2 p{
+        flex-basis: 40%;
+        margin: 0;
+        padding: 40px;
+    }
+    .subImage{
+        flex-basis: 50%;
+        max-width: 600px;
+        margin-top: 0;
+    }
+    .subImage img{
+        width:48%;
+    }
+    /*groumet*/
+    main section .gourmet{
+        margin:44px 0 0 auto;
+    }
+    .tainanGourmet h4,
+    .tainanGourmet h5{
+        display:inline-block;
+    }
+    .tainanGourmet .gourmetDescription{
+        margin:80px auto 0 0;
+        padding:60px 0;
+        width:38%;
+    }
+    .gourmetShopGroup{
+        display: flex;
+        justify-content: space-between;
+    }
+    .gourmetShopGroup article{
+        flex-basis: 47%;
+    }
+    .gourmetShopGroup article p img{
+        width:100%;
+        height:auto;
+    }
+    .shopDescription{
+        margin:0;
+        width:100%;
+    }
+    .textPosition{
+        text-align: left;
+    }
+    /* pickup */
+    main .tainanPickUp h4,
+    main .tainanPickUp .pickupDescription{
+        margin:0;
+        width:38%;
+    }
+    main .tainanPickUp h4{
+        font-size:36px;
+        margin-top: 80px;
+    }
+    main .tainanPickUp .pickupDescription{
+        padding-top:44px;
+        font-size:20px;
+    }
+    main .tainanPickUp .flexBox{
+        display:flex;
+        justify-content: space-between;
+    }
+    main .tainanPickUp article .spOnly{
+        display:none;
+    }
+    main .tainanPickUp article .pcOnly{
+        display:block;
+    }
+    main .tainanPickUp .flexBox .mainImage{
+        flex-basis:51%;
+        margin:0;
+    }
+    main .tainanPickUp .flexBox .mainImage img{
+        width:100%;
+        height:100%;
+    }
+    main .tainanPickUp .flexBox div{
+        flex-basis: 38%;
+        align-items: center;
+        padding-top:74px;
+    }
+    main .tainanPickUp .flexBox div p{
+        margin:0;
+        font-size: 20px;
+        width:100%;
+    }
+    main .tainanPickUp article .subImage{
+        max-width: 1080px;
+        max-height: 214px;
+        width:100%;
+        margin:80px 0 0 0;
+    }
+    main .tainanPickUp article .subImage img{
+        flex-basis: 48%;
+        width:48%;
+        /*max-height: 214px;*/
+        height:inherit;
+    }
+    main .tainanPickUp article .hotelDescription{
+        max-width:1080px;
+        width:100%;
+        text-align: center;
+        margin-top: 80px;
+    }
+    main .tainanPickUp .lotasArticle{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 80px;
+    }
+    main .tainanPickUp .lotasArticle .minSizeImage{
+        flex-basis: 52%;
+        margin:0;
+    }
+    main .tainanPickUp .lotasArticle .minSizeImage img{
+        width:100%;
+        height: inherit;
+    }
+    main .tainanPickUp .lotasArticle div{
+        flex-basis: 36%;
+    }
+    main .tainanPickUp .lotasArticle div p{
+        margin:0;
+        width:100%;
+    }
+    main .tainanPickUp .lotasArticle div .minSizeImage{
+        margin-top:20px;
+    }
+
+    /*モーダルウィンドウ*/
+    .openWindow{
+        width:45vw;
+        height:45vw;
+        top:25%;
+        left:30vw;    
+    }
+    .gourmetShopGroup .modalWindow p img{
+        width:90%;
+        height:inherit;
+        margin:0 12%;
+    }
+}
