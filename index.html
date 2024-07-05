@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+
+  <body>
+    <header>
+        <div class="headerContainer">
+            <div class="drawer">
+                <button class="menuTrigger" id="menuBtn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+            </div>
+            <div class="navigation">
+                <nav class="globalNav">
+                    <ul>
+                        <p class="menu">Menu</p>
+                        <li class="top"><a href="#">Top</a></li>
+                        <li><a href="#aboutContainer">About</a></li>
+                        <li><a href="#skillContainer">Skill</a></li>
+                        <li><a href="#prodactContainer">Prodaction</a></li>
+                        <li><a href="#contactContainer">Contact</a></li>
+                    </ul>            
+                </nav>
+            </div>
+            <h1>My Portfolio</h1>
+        </div><!--headerContainer-->
+    </header>
+    <main>
+        <div id="aboutContainer" class="aboutContainer">
+            <h2>About <span class="h2Sub">自分について</span></h2>
+            <p>正社員としてインターネットカフェの店長業務と不動産営業を経験。
+                その後、派遣社員として社内向けヘルプデスクのコールセンター業務を経験。<br>
+                2024年2月にキャリアアップを目指して退職し、以前から興味のあったWeb開発の知識を学びたいと思い訓練校に入校。
+            </p>
+        </div><!--aboutContainer-->
+        <div id="skillContainer" class="skillContainer">
+            <h2>Skill <span class="h2Sub">学んだスキル</span></h2>
+            <p>HTML・CSSコーディング,JavaScript,</p>
+            <p>フレームワーク：Bootstrap</p>
+            <p>オープンソースライブラリ：Jquery</p>
+        </div><!--skillContainer-->
+        <div id="prodactContainer" class="prodactContainer">
+            <h2>Production <span class="h2Sub">制作物</span></h2>
+
+            <div class="solo1">
+                <div class="prodactImage">
+                    <div class="prodactText">
+                        <p><span class="solo">個人制作</span></p>
+                        <h3>"架空のリフォーム会社"</h3>
+
+                        <p>制作時間= 48時間</p><br>
+                        <a href="ensyu1/index.html">rink</a>
+                    </div>
+                    <div class="thumbnail">
+                        <p><img src="images/solo1.png"></p>
+                        <p><サムネ画像></p>
+                    </div>
+                </div>   
+            </div>
+            
+            <div class="group1">
+                <div class="prodactImage">
+                    <div class="prodactText">
+                        <p><span class="group">グループ制作</span></p>
+                        <h3>"架空の旅行会社"</h3>
+                        <p>制作時間= 60時間 x 4人</p><br>
+                        <a href="groupMMKI/index.html">rink</a>
+                    </div>
+                    <div class="thumbnail">
+                        <p><img src="images/group1Thumbnail.png"></p>
+                        <p><サムネ画像></p>
+                    </div> 
+                </div>
+                <p>こちらは1グループ4人での制作課題となり、<br>
+                    各ページのコーディングとJavaScriptの機能を1つずつ分担して制作しました。<br>
+                    私はトップページとトップページ内のスライド機能を担当しました。
+                </p>
+            </div>
+        </div><!--prodactContainer-->
+        <div id="codeContainer" class="codeContainer">
+            <h2>Code <span class="h2Sub">ソースコード</span></h2>
+            <p class="githubIcon"><img src="images/githubIcon.svg"> <a href="https://github.com/kuwana-sss">GitHub</a></p>
+        </div><!--codeContainer-->
+        <div id="contactContainer" class="contactContainer">
+            <h2>Contact <span class="h2Sub">お問い合わせ</span></h2>
+            <addoress>kuwana.s99@gmail.com</addoress>
+        </div>
+    </main>
+    <footer>
+        &copy; kuwana
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="scripts/drawer.js"></script>
+  </body>
+</html>

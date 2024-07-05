@@ -1,0 +1,318 @@
+header {
+  position: relative;
+  background: url(../images/headerImg.jpg) no-repeat right center/cover;
+  width: 740px;
+  height: 300px;
+}
+
+body {
+  background: #c7c3c38f;
+  width: 740px;
+}
+
+.skillContainer,.prodactContainer,.codeContainer,
+.aboutContainer,.contactContainer {
+  width: 80%;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+}
+.headerContainer {
+  padding-top: 50px;
+  letter-spacing: 0.5em;
+}
+.prodactContainer > div { /* 背景と枠線 */
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  background: #f4f4f4;
+  border-left: solid 6px #5bb7ae;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+
+/*ドロワーメニュー*/
+.navigation {
+  position: fixed;
+  top: 0;
+  right: -100%; 
+  width: 100%; /* 画面幅一杯に広げる */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 60px; /* To accommodate header */
+  transition: right 1s ease; /* 展開に掛かる時間 */
+  transition-delay: 1s; /* 展開前の待機時間 */
+  z-index: 900; /* 他の要素より手前に表示 */
+  background-repeat: no-repeat;
+  background-position: top left; /* 右上に配置 */
+}
+
+.navigation nav {
+  padding: 20px;
+}
+
+.navigation nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navigation nav ul li {
+  margin-bottom: 10px;
+}
+
+.navigation nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.isOpen {
+  right: 0px;
+}
+
+.menu {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.top {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.navButton {
+  background-repeat: no-repeat;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  right: 80px;
+  top: 5px;
+}
+
+/* ドロワーメニュー */
+.drawer {
+  position: absolute;
+  right: 60px;
+  top: 50px;
+}
+
+.menuTrigger,
+.menuTrigger span { /* ドロワーボタン */
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: fixed;
+}
+.menuTrigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+.menuTrigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: green;
+  border-radius: 4px;
+}
+.menuTrigger span:nth-of-type(1) {
+  top: 0;
+}
+.menuTrigger span:nth-of-type(2) {
+  top: 20px;
+}
+.menuTrigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/* 確認中 */
+#menuBtn span:nth-of-type(1) { 
+  animation: menuBtnBar01 .5s forwards;
+}
+@keyframes menuBtnBar01 {
+  0% {
+    transform: translateY(20px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+#menuBtn span:nth-of-type(2) {
+  animation: menuBtnBar02 .5s forwards;
+}
+@keyframes menuBtnBar02 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#menuBtn span:nth-of-type(3) {
+  animation: menuBtnBar03 .5s forwards;
+}
+@keyframes menuBtnBar03 {
+  0% {
+    transform: translateY(-20px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+#menuBtn::after { /* 波紋 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 30px;
+  margin: -16px 0 0 -16px;
+  border-radius: 50%;
+  border: 1px solid green; /* 波紋の色 */
+  transition: all .1s;
+  opacity: 0;
+}
+#menuBtn.active::after {
+  animation: circle .5s;
+}
+@keyframes circle {
+  0% {
+    transform: scale(.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+#menuBtn.active span:nth-of-type(1) { /* 上線の展開時のアニメーション */
+  animation: activeMenuBtnBar01 .5s .5s forwards;
+}
+@keyframes activeMenuBtnBar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(20px) rotate(-45deg);
+  }
+}
+#menuBtn.active span:nth-of-type(2) { /* 中線の展開時のアニメーション */
+  animation: activeMenuBtnBar02 .5s .5s forwards;
+}
+@keyframes activeMenuBtnBar02 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#menuBtn.active span:nth-of-type(3) { /* 下線の展開時のアニメーション */
+  animation: activeMenuBtnBar03 .5s .5s forwards;
+}
+@keyframes activeMenuBtnBar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(-20px) rotate(45deg);
+  }
+}
+
+
+/*ドロワーメニューここまで*/
+
+
+h1,h2 {
+  text-align: center;
+  font-family: "Sriracha";
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  font-size: 60px;
+  font-weight: 600;
+  color: #302E33; 
+}
+.h2Sub {
+  font-size: 16px;
+  font-family: serif;
+}
+main p {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.githubIcon img {
+  width: 30px;
+  height: 30px;
+}
+.solo {
+  background-color: #ED1A3D;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+}
+.group {
+  background-color: #008000;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.prodactImage {
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+.thumbnail { /*サムネ画像*/
+  text-align: center;
+}
+.thumbnail img {
+  width: auto;
+  height: 300px;
+}
+
+footer {
+  text-align: center;
+  background: #C69E6E;
+  font-size: 80%;
+}
+
+
+/* レスポンシブ対応 */
+@media screen and (min-width:768px) {
+  .onlyPC {
+    display: block;
+  }
+  .onlySP {
+    display: none;
+  }
+  body {
+    width: 1366px;
+  }
+  header {
+    position: relative;
+    max-width: 1366px;
+    width: 100%;
+    height: 100vh;
+  }
+}
