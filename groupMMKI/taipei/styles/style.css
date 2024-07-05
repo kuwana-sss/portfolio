@@ -1,0 +1,1069 @@
+@charset "utf-8";
+
+/*
+使用するカラー
+#007AB7 濃い青
+#6CBAD8 footer
+#000000
+#FFFFFF
+
+#007AB7の透明度90%
+#EDA184の透明度20%
+#64C99Bの透明度20%
+
+#F4F4F4
+#000000の透明度25%
+#8F8F8F
+sp:max-width:768px
+*/
+
+/* mobile first*/
+/*header部分のCSS*/
+
+/*.globalNav{
+    display:none;ドロワーメニューのため、普段は非表示
+}*/
+
+header{
+    max-width: 768px;
+    height: 667px;
+    width:100%;
+    background: url(../images/spHeroImg.png) no-repeat right center/cover;
+    position:relative;
+    padding-top: 4px;
+}
+.headerContainer{
+
+    margin:0 20px 0 20px;
+    height: 663px;
+    border: 1px solid #FF0000;
+    border-bottom: none;
+}
+header h1{
+    position:absolute;
+    top: 116px;
+    left:68px;
+}
+header .snsIcons{
+    position:absolute;
+    bottom:70px;
+}
+
+header .snsIcons nav ul li{
+    margin-bottom:20px;
+}
+
+header .cityGuide{
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    position:absolute;
+    bottom:0;
+    width: 247px;
+    right:20px;
+}
+
+/*ドロワーメニュー*/
+.drawer-icon {
+    position: relative;
+    top: -5px;
+    left: 15px;
+    width: 48px; /* アイコンの幅 */
+    height: 48px; /* アイコンの高さ */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%; /* 円形にするための丸み */
+    z-index: 1000; /* 他の要素よりも手前に表示 */
+  }
+
+  .line {
+    display: block;
+    width: 60%;
+    background-color: white; /* 線の色 */
+    border-radius: 2px; /* 線の角を丸める */
+    margin: 10px 10px; /* 線の間隔を調整 */
+  }
+
+ 
+.drawer-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.drawer-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    width: 100%; /* 画面幅一杯に広げる */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px; /* To accommodate header */
+    transition: left 0.3s ease;
+    z-index: 900; /* 他の要素より手前に表示 */
+    background-image: url(../images/taiwanLogo.svg); /* 画像のパスを指定 */
+    background-repeat: no-repeat;
+    background-position: top left; /* 右上に配置 */
+}
+
+.navigation nav {
+  padding: 20px;
+}
+
+.navigation nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navigation nav ul li {
+  margin-bottom: 10px;
+}
+
+.navigation nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+
+.isOpen {
+  left: 0;
+}
+
+.menu {
+color: #fff;
+font-size: 24px;
+text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.top {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.policy {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+
+
+.navButton {
+background-image: url(../images/drawerIcon.svg);
+background-repeat: no-repeat;
+z-index: 1000;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+left: 300px;
+top: 5px;
+}
+.closeBtn{
+    background-image: url(../images/drawerClose.svg);
+}
+/*ドロワーメニューここまで*/
+
+/* ローティング仕様 */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    bottom: 0;
+    right: 0;
+    background: #007AB7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:1000;
+  }
+  
+  .loadingBox img {
+    text-align: center;
+    width: 287px;
+    z-index:1010;
+  }   
+  
+  
+  @keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+  
+    50% {
+        opacity: 1; 
+    }
+    
+    80% {
+      opacity: 1; 
+  }
+    100% {
+        opacity: 0;
+    }
+  }
+  
+  .animation_loading {
+    animation: fadeInOut 3s ease;
+  }
+  /*ローディング画面ここまで*/
+
+/*パンくずナビゲーション*/
+.mainContainer{
+    margin:0 20px;
+    border-left: 1px solid #FF0000;
+    border-right: 1px solid #FF0000;
+}
+.breadCrumb{
+    width:100%;
+    border-bottom: 1px solid #000000;
+}
+.breadCrumb nav ul{
+    display:flex;
+    padding:8px 0;
+    margin:0;
+}
+.breadCrumb nav ul li{
+    list-style: none;
+}
+.breadCrumb nav ul li a{
+    text-decoration: none;
+    color:#000000;
+}
+/*main部分*/
+main{
+    margin-bottom:10px;
+}
+.containerBottomLine{
+    border-bottom: 1px solid #FF0000;
+}
+/*footer部分のCSS*/
+footer{
+    max-width: 768px;
+    background-color: #007AB7;
+    color:#FFFFFF;
+    text-align: center;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
+.footerContainer{
+    border-left: 1px solid #FF0000;
+    border-right: 1px solid #FF0000;
+    margin:0 20px;
+}
+
+.flag{
+    margin:0 auto;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.flag img{
+    width: 34px;
+    height: 24px;
+}
+
+.footerNav{
+    width: 195px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: left;
+}
+.footerNav ul{
+    padding-left: 0;
+}
+.footerNav nav ul li{
+    width:100%;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom:6px;
+    margin-top:12px;
+}
+
+.footerUnder{
+    display:flex;
+}
+.footerLogo{
+    width: 71px;
+    height: 28px;
+    background: url(../images/spFooterLogo.png)  no-repeat right center/cover;
+    margin-right:24px;
+}
+.snsNav ul{
+    display:flex;
+    justify-content: space-between;
+    width:143px;
+    padding:0;
+    margin:0;
+}
+
+.snsNav ul li img{
+    display:block;
+    width: 32px;
+    height: 32px;
+
+}
+
+.footerContainer > p{
+    margin-top:24px;
+    margin-bottom: 12px;
+}
+
+body {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    /* line-height: ;  行間*/
+    color: 000000;
+  }
+
+
+
+/*自分作業*/
+
+/* 画像１０枚の大きさ指定する*/
+
+.cityName img {
+    width: 59%;
+    height: auto;
+}
+
+.imgkyuuhunMain p {
+    width: 78%;
+    margin: auto;
+ }
+
+.imgkyuuhunMain p img {
+    max-width: 100%;
+}
+
+.imgkyuuhunMain p {
+    margin: auto;
+}
+
+.imgTaipeiMain p {
+    width: 78%;
+    margin: auto;
+ }
+
+.imgTaipeiMain p img {
+    max-width: 100%;
+}
+
+.imageContainerSub p {
+    width: 36%;
+  }
+
+.imageContainerSub p img {
+    max-width: 100%;
+}
+
+.nightMarket {
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+.imgNightMarket1 p {
+    width: 48%;
+    margin: auto;
+}
+
+.imgNightMarket1 p img {
+    max-width: 100%;
+}
+
+.imgNightMarket1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.imgNightMarket2 p {
+    width: 48%;
+    margin: auto;
+}
+
+.imgNightMarket2 p img {
+    max-width: 100%;
+}
+
+.imgNightMarket2 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.accessMainimg p {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin: auto;
+}
+
+.accessMainimg p img {
+    max-width: 100%;
+}
+
+.yuuyuuCard p {
+    width: 25%;
+    margin: auto;
+}
+
+.yuuyuuCard p img {
+    max-width: 100%;
+}
+
+.yuuyuuCard {
+    margin-bottom: 45.6px;
+}
+
+ /* タイトルつくる*/
+
+h2, h3 {
+    display: inline-block;   /* 横並びにした*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+ /*文字フォント、サイズ*/
+h2 {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+ /*タイトルの背景に画像入れる*/
+.attraction {
+    background-image: url(../images/headingBimgMb.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    margin-top: 20px;
+    }
+
+.nightMarket {
+    background-image: url(../images/headingBimgMb.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.access {
+    background-image: url(../images/headingBimgMb.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+ /*文字の背景ブルーにする*/
+.textLong {
+    background-color:  rgba(108, 186, 216, 0.2) ;
+    width: 295px;
+    display: block;
+    margin: 20px auto;
+    padding: 8px 36px;
+}
+
+.textKyuuhunSub {
+    background-color:  rgba(108, 186, 216, 0.2) ;
+    font-size: 12px;
+    line-height: 20px;
+    width: 295px;
+    text-align: center;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    padding: 8px 21.5px;
+}
+
+.textTaipeiSub {
+    background-color:  rgba(108, 186, 216, 0.2) ;
+    font-size: 12px;
+    line-height: 20px;
+    width: 295px;
+    text-align: center;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+span {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 700;
+}
+
+ /*サブタイトル文字*/
+h4 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+ }
+
+dt {
+    display: block;
+    width: 223px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+dl {
+    display: block;
+    width: 223px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.textNightMarket {
+    display: block;
+    width: 223px;
+    margin: 0 auto;
+}
+
+ /*水平線をカスタマイズ*/
+ hr {
+    border: none; /* デフォルトのボーダーを削除 */
+    height: 2px; /* 線の高さ */
+    background-color: black; /* 線の色 */
+    margin: 20px 0; /* 上下のマージン */
+    width: 223px; /* 長さ */
+    /* 中央寄せにするために以下のスタイルを追加 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ /*画像横並び*/
+.imageContainerSub {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*背景画像*/
+
+button {
+    background-image: url('../images/bottomFlame.png'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をボタン全体にカバー */
+    height: 48px;
+    width: 131.5px;
+    background-position: center; /* 背景画像を中央に配置 */
+     /* padding: ; パディングを設定 */
+    text-align: center; /* テキストを中央揃え */
+    text-decoration: none; /* テキストの下線を除去 */
+    display: inline-block; /* インラインブロック要素に設定 */
+    font-size: 12px; /* フォントサイズを設定 */
+    /*margin: ;  マージンを設定 */
+    /*cursor: ;  カーソルをポインターに設定 */
+    border: none; /* 枠線を除去 */
+}
+
+.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 32px; 画像間のスペースを適宜調整 */
+    justify-content: space-around;
+}
+
+.button3 {
+    margin-top: 32px;
+}
+
+.button4 {
+    margin-top: 32px;
+}
+
+.nightMarket {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.access {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.containerAccess {
+    width: 66%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+/* アクセスの下の線 */
+.underLine {
+    border-bottom: 1px solid black; /* 下線のスタイル */
+    padding-bottom: 12px; /* テキストと線の間のスペースを調整 */
+    width: 66.5%; /* 線の長さを調整 */
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: normal;
+    margin: auto; /* テキストを中央揃え */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+/* PC版 */
+
+@media screen and (min-width:769px){
+
+/* ヘッダー部分 */
+header{
+    max-width: 1366px;
+    height: 768px;
+    width:100%;
+    background: url(../images/pcHeroImg.png) no-repeat right center/cover;
+    position:relative;
+}
+.headerContainer{
+    margin:0 83px;
+    height: 100%;
+    border-right: 1px solid #FF0000;
+    border-left: 1px solid #FF0000;
+    position:relative;
+}    
+header .headerContainer .logo img{
+    width:133px;
+    height: 54px;
+}
+header .headerContainer .logo{
+    position:absolute;
+    top:20px;
+    left:20px;
+} 
+
+.navButton,
+.menu {
+    display:none;
+}
+
+header .navigation{
+    position:absolute;
+    top:0px;
+    left:30%;
+    background: none;
+    height:auto;
+    margin:0;
+    padding:0;
+}
+
+.globalNav{
+    display: block;
+}
+
+.globalNav ul{
+    display: flex;
+    width: 644px;
+    justify-content: space-between;
+}
+.globalNav ul li{
+    list-style: none;
+    margin: 0;
+}
+
+.globalNav ul li a{
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color:#FFFFFF;
+    text-decoration: none;
+}
+header .snsIcons{
+    position:absolute;
+    bottom:80px;
+}
+header .snsIcons nav ul li{
+    margin-bottom:30px;
+}
+header h1{
+    position:absolute;
+    top: 94px;
+    left:280px;
+}    
+header h1 img{
+    width: 300px;
+    height: 540px;
+}
+header .cityGuide{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    width: 467px;  
+}
+
+footer{
+    max-width: 1366px;
+}
+.footerContainer{
+    margin:0 83px;
+    height: 100%;
+}
+.pcFooterContents{
+    display:flex;
+    justify-content:left;
+}
+.footerNav{
+    margin:0;
+    margin-left:20px;
+    margin-bottom:20px;
+    flex-basis: 33%;
+}
+.footerNav nav{
+    width: 100%;
+}
+
+.footerUnder{
+    flex-basis:66%;
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.footerLogo{
+    width: 256px;
+    height:103px;
+    margin-right:0;
+}
+
+/*自分作業*/
+
+.main {
+    width: 87%;
+}
+
+
+.containerKyuuhunMain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerKyuuhunSub {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*画像に直接指示する*/
+.imgkyuuhunMain {
+    align-self: center; 
+    flex-basis: 50%;
+}
+
+.containerTaipeiMain {
+    display: flex; /* コンテナにする縦並びを横並びにする */
+}
+
+.containerTaipeiMainSub {
+    display: flex; /* コンテナにする縦並びを横並びにする */
+}
+
+.imgTaipeiMain {
+    align-self: center; /*子要素に直接指示するP115*/
+    flex-basis: 50%; /*初期サイズがコンテナの幅（または高さ）の50%に設定*/
+}
+
+.textLong {
+    flex-basis: 41.6%;/*初期サイズがコンテナの幅（または高さ）の41.6%に設定*/
+}
+
+.textKyuuhunSub {
+    flex-basis: 41.6%;
+}
+
+.textTaipeiSub {
+    flex-basis: 41.6%;
+}
+
+.containerKyuuhunMain {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tainanAttrction h4 {
+    text-align: left;
+}
+
+.imageContainerSub p img{
+    max-width: 100%;
+}
+
+.imageContainerSub p img {
+    height: 167px;
+    width: 290px;
+    object-fit: cover;
+    object-position: center 20%;
+}
+.containerNightMarketText {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nightMarketSet {
+    flex-basis: 38%;
+}
+
+.imgNightMarket1 {
+    flex-basis: 45%;
+}
+
+.imgNightMarket1 p {
+    max-width: 100%;
+}
+
+.containerNightMarketButton {
+    flex-basis: 38%;
+}
+
+.imgNightMarket2 {
+    flex-basis: 45%;
+}
+
+.imgNightMarket2 p {
+    max-width: 100%;
+}
+
+.containerNightMarketButton {
+    display: flex;
+    justify-content: space-around;
+}
+
+hr {
+    width: 40%; /*線を40%にする*/
+}
+
+dl {
+    display: flex;
+}
+
+ /*タイトル文字フォント、サイズ*/
+h2 {
+    font-size: 48px;
+    line-height: 48px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+/*タイトルの背景に画像入れる*/
+.attraction {
+    background-image: url(../images/headingBimgPc.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    text-align: center;
+    margin-top: 20px;
+    }
+
+.nightMarket {
+    background-image: url(../images/headingBimgPc.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nightMarket h3 {
+margin-right: 108.5px;
+}
+
+.access {
+    background-image: url(../images/headingBimgPc.svg);
+    background-repeat: no-repeat;
+    background-position: left center; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+.attraction {
+    height: 96px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.nightMarket {
+    height: 96px;
+    text-align: right;
+    margin-left: 20px;
+}
+
+.access {
+    height: 96px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+h2 {
+    margin-left: 103.5px;
+}
+
+h4 {
+    padding-top: 60px;
+    margin-left: 20px;
+    font-size: 36px;
+    text-align: left; /* 左寄せする */
+} 
+
+.nightMarket {
+    text-align: right; /* 右寄せする */
+}
+
+p {
+    font-size: 20px;
+}
+
+.textKyuuhunSub {
+    font-size: 20px;
+}
+
+.textTaipeiSub {
+    font-size: 20px;
+}
+
+span {
+    font-size: 20px;
+}
+
+.taipeiAccess h4 {
+    font-size: 24px;
+}
+
+dt {
+    font-size: 24px;
+    line-height: 38.4px;
+}
+
+dd {
+    font-size: 24px;
+    line-height: 38.4px;
+}
+
+.accessMainimg p {
+    width: 96%;
+}
+
+.accessMainimg p img {
+    max-width: 100%;
+}
+
+.containerAccess dt :defined {
+    display: flex;
+}
+
+.textLong {
+    font-size: clamp(12px, 5vw, 20px);
+}
+
+.imgNightMarket1 p {
+    width: 45%;
+    display: block; /* ブロック要素にする */
+    width: 100%; /* 要素の幅を100%にする */
+    text-align: justify; /* テキストを両端揃えにする */
+}
+
+.nightMarketSet hr {
+    width: 100%; /* 要素の幅を100%にする */
+    text-align: justify; /* テキストを両端揃えにする */
+}
+
+
+.imgNightMarket1 p img {
+    max-width: 100%;
+}    
+
+.imgNightMarket2 p {
+    width: 45%;
+    display: block; /* ブロック要素にする */
+    width: 100%; /* 要素の幅を100%にする */
+    text-align: justify; /* テキストを両端揃えにする */
+}
+
+.imgNightMarket2 p img{
+    max-width: 100%;
+}    
+
+.imgNightMarket2 img {
+    width: 100%;
+    height: auto; /* アスペクト比を維持 */
+  }
+
+.textNightMarket {
+    display: block; /* ブロック要素にする */
+    width: 100%; /* 要素の幅を100%にする */
+    text-align: justify; /* テキストを両端揃えにする */
+}
+
+.underLine {
+    font-size: clamp(12px, 5vw, 24px);
+}
+
+.buttonContainer {
+    margin-left: 0;
+    flex-basis: 38%;
+    justify-content: space-between;
+}
+
+.buttonSet1 {
+    flex-basis: 45%;
+}
+
+.buttonSet2 {
+    flex-basis: 45%;
+}
+
+.mainContainer{
+    margin:0 83px;
+    height: 100%;
+    border-right: 1px solid #FF0000;
+    border-left: 1px solid #FF0000;
+}
+main{
+    margin-bottom:0;
+}
+
+.underLine {
+    width: 35%;
+    padding-bottom: 40px; /* テキストと線の間のスペースを調整 */
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 80px;
+    margin-left: 74px;
+}
+
+.containerAccess {
+    display: flex;
+    width: 86%;
+    height: 832px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.accessBox {
+    width: 40%;
+    height: 406px;
+}
+
+.yuuyuuCard {
+    text-align: right;
+}
+
+}
