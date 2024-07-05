@@ -1,0 +1,1050 @@
+
+@charset "utf-8";
+
+
+/* {
+color:
+青　#007AB7　透明度90%
+水色　#6CBAD8　透明度20%
+黒　#000000
+白　#FFFFFF　透明度25%
+ピンク　#EDA184　透明度20%
+緑　#64C99B
+薄い灰色　F4F4F4
+濃い灰色　#8F8F8F
+} */
+
+
+/* mobile first*/
+
+
+/*  */
+/*  */
+/*  */
+/* ローティング仕様 */
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    bottom: 0;
+    right: 0;
+    background: #007AB7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loadingBox img {
+    text-align: center;
+    width: 287px;
+}   
+
+
+  @keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1; 
+    }
+
+    80% {
+      opacity: 1; 
+  }
+    100% {
+        opacity: 0;
+    }
+  }
+
+  .animationLoading {
+    animation: fadeInOut 3s ease;
+  }
+
+
+/*モーダルウィンドウが表示されるときのアニメーション*/
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}*/
+
+
+/*Modal Window CSS*/
+.modalWindow{
+    display:none;/*初期状態はModalWindowは非表示*/
+    width: 100%;
+}
+
+.modalLink{
+    cursor: pointer;/*カーソルをポインタ表示にする*/
+}
+.modalWindow p{
+    position:absolute;
+    top: 46px;
+    right:46px;
+}
+.modalWindow p img{
+    width: 157px;
+    height:165px;
+}
+
+.modalImgA {
+    position: relative;
+    top: 60px;
+    right: 150px;
+}
+
+.modalImgB {
+    position: relative;
+    top: 60px;
+    left: 20px;
+}
+
+
+.modalWindow .closeModal{
+    z-index:110;/*絶対閉じられるように手前に置く*/
+    position:absolute;
+    display:block;
+    top: 8px;
+    right:8px;
+    width:28px;
+    height:28px;
+    background-image: url(../images/modalCloseButton.svg);
+}
+.modalBackground{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:200vh;
+    /* background-color: #007AB7; */
+    z-index:90;/*openWindowより下に表示する*/
+    animation:fadein 0.3s ease-in-out forwards;/* アニメーションを設定 */
+}
+.openWindow{
+    display:block;
+    position:fixed;
+    top:218px;
+    left:0;
+    width:375px;
+    height:426px;
+    background-color: #007AB7;
+    z-index:100;
+    animation:fadein 0.3s ease-in-out forwards;/* アニメーションを設定 */
+}
+
+.modalWindow #modalTitle {
+    /* position: absolute; */
+    /* top: 10px;  */
+    left: 20px; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+#modalAddress {
+    position: relative;
+    top: 300px; /* 適切な位置に調整 */
+    left: 30px; /* 適切な位置に調整 */
+    font-size: 12px;
+    color: #ffffff;
+}
+
+
+
+
+
+
+/*  */
+/*  */
+/*ドロワーメニュー*/
+.drawer-icon {
+    position: relative;
+    top: -5px;
+    left: 15px;
+    width: 48px; /* アイコンの幅 */
+    height: 48px; /* アイコンの高さ */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%; /* 円形にするための丸み */
+    z-index: 1000; /* 他の要素よりも手前に表示 */
+  }
+
+  .line {
+    display: block;
+    width: 60%;
+    background-color: white; /* 線の色 */
+    border-radius: 2px; /* 線の角を丸める */
+    margin: 10px 10px; /* 線の間隔を調整 */
+  }
+
+
+
+
+.navigation {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px; /* To accommodate header */
+    transition: right 0.3s ease;
+    z-index: 900; /* 他の要素より手前に表示 */
+    background-image: url(../images/taiwanLogo.svg); /* 画像のパスを指定 */
+    background-repeat: no-repeat;
+    background-position: top left; /* 右上に配置 */
+}
+
+.navigation nav {
+  padding: 20px;
+}
+
+.navigation nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navigation nav ul li {
+  margin-bottom: 10px;
+}
+
+.navigation nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+
+.isOpen {
+  right: 0;
+}
+
+.menu {
+color: #fff;
+font-size: 24px;
+text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.top {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.policy {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+
+
+.navButton {
+background-image: url(../images/drawerIcon.png);
+background-repeat: no-repeat;
+z-index: 1000;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+position: absolute;
+left: 300px;
+top: 5px;
+}
+.closeBtn{
+    background-image: url(../images/drawerClose.svg);
+}
+/*ドロワーメニューここまで*/
+
+    /*  */
+    /* headerの装飾 */
+
+    header .headerContainer .logo img{
+        width:111px;
+        height: 45px;
+    }
+
+
+    .headerContainer{
+
+        margin:0 20px 0 20px;
+        height: 663px;
+        border: 1px solid #FF0000;
+        border-bottom: none;
+    }
+
+    header{
+        width:100%;
+        background: url(../images/spTaichuFullHaikei.png) no-repeat right center/cover;
+        position:relative;
+        padding-top: 4px;
+    }
+
+    header h1{
+        position:absolute;
+        top: 116px;
+        left:68px;
+    }
+    header .snsIcons{
+        position:absolute;
+        bottom:70px;
+        left: -10px;
+    }
+
+    header .snsIcons nav ul li{
+        margin-bottom:20px;
+    }
+
+
+    .cityName {
+        transform: translateX(20px) translateY(-20px);
+    }
+
+    .cityName img {
+        max-width: 100%;
+        width: 199px;
+        height: 372px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .cityName {
+        text-align: center; 
+        margin-top: 20px;
+    }
+
+    .cityNameText {
+        color: #f4f4f4;
+        font-size: 12px;
+        width: 247px;
+        margin-left: 110px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+
+    /*  */
+    /*パンくずナビゲーション*/
+
+    .mainContainer{
+        margin:0 20px;
+        border-left: 1px solid #FF0000;
+        border-right: 1px solid #FF0000;
+    }
+    .breadCrumb{
+        width:100%;
+        border-bottom: 1px solid #000000;
+    }
+    .breadCrumb nav ul{
+        display:flex;
+        padding:8px 0;
+        margin:0;
+
+    }
+    nav ul li{
+        list-style: none;
+
+    }
+    .breadCrumb nav ul li a{
+        text-decoration: none;
+        color:#000000;
+    }
+
+    /*  */
+    /*  */
+    /* 全体の装飾 */
+    /*  */
+    /*  */
+
+
+    body {
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    img {
+        max-width: 100%; /* 写真幅 */
+    }
+
+    .pc {
+        display: none;
+    }
+
+    main{
+        margin-bottom:50px;
+        padding-bottom: 50px;
+        margin:0 20px;
+        border-left: 1px solid #FF0000;
+        border-right: 1px solid #FF0000;
+        border-bottom: 1px solid #FF0000;
+    }
+    .containerBottomLine{
+        border-bottom: 1px solid #FF0000;
+    }
+
+
+    h2 {
+        font-size: 24px;
+        font-weight: 490;
+    }
+
+
+    h3 {
+        font-size: 12px;
+        /* font-weight: 470; */
+    }
+
+
+    h2, h3 {
+            display: inline-block;  
+            margin-top: 15px;
+            margin-bottom: 15px;
+    }
+
+    .subTitle {
+        background-image: url(../images/TatleHaikei.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+    }
+
+    .subTitleB {
+        background-image: url(../images/TatleHaikei.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+    }
+
+    .subTitleC {
+        background-image: url(../images/TatleHaikei.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+    }
+
+
+    h4 {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+    /* Attrction */
+    #taityuunAttrction {
+        width: 295px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    #attractionText {
+        background-color: rgba(237, 161, 132, 0.2);
+        font-size: 12px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+
+    /*        */
+    /*        */
+    /* Museum */
+
+    #taityuuMuseum {
+        width: 295px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .museum p {
+        font-size: 12px;
+    }
+
+    #MuseumText {
+        width: 223px;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    h5 {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    .modalLink {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-end;
+        margin-left: auto; 
+        font-size: 12px;
+        background-color: #FFFFFF;
+        border: 5px solid rgba(237, 161, 132, 0.2);
+        margin-bottom: 30px;
+        width: 100px;
+    }
+
+
+
+    h7 {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: -15px;
+    }
+
+    .sweets {
+        width: 223px;
+        margin: 0 auto;
+    }
+
+    .sweets-SubImg {
+        width: 157px;
+        height: 225px;
+        display: flex;
+        justify-content: center;
+        margin-left: 23px;
+    }
+
+    .sweets p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sweetsContainer p {
+        border-top: 1px solid #000000;
+        padding-top: 20px;
+    }
+
+    #sweets-SubImg1 {
+        margin-left: 20px;
+    }
+
+    #solid {
+        border-bottom: 1px solid #000000;
+        width: 223px;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    /*  */
+    /*  */
+    /* footer部分のCSS */
+    /*  */
+    /*  */
+
+    footer{
+        max-width: 768px;
+        background-color: #007AB7;
+        color:#FFFFFF;
+        text-align: center;
+    }
+    footer ul li{
+        list-style: none;
+    }
+    footer ul li a{
+        text-decoration: none;
+        color:#FFFFFF;
+    }
+
+    .footerContainer{
+        border-left: 1px solid #FF0000;
+        border-right: 1px solid #FF0000;
+        margin:0 20px;
+    }
+
+    .flag{
+        margin:0 auto;
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+
+    .flag img{
+        width: 34px;
+        height: 24px;
+    }
+
+    .footerNav{
+        width: 195px;
+        margin: 0 auto;
+        font-size: 12px;
+        text-align: left;
+    }
+    .footerNav ul{
+        padding-left: 0;
+    }
+    .footerNav nav ul li{
+        width:100%;
+        border-bottom: 1px solid #ffffff;
+        padding-bottom:6px;
+        margin-top:12px;
+    }
+
+    .footerUnder{
+        display:flex;
+    }
+    .footerLogo{
+        width: 71px;
+        height: 28px;
+        background: url(../images/spFooterLogo.png)  no-repeat right center/cover;
+        margin-right:24px;
+    }
+
+    .snsNav {
+        margin-left: 120px;
+        margin-bottom: 10px;
+    }
+
+    .snsNav ul{
+        display:flex;
+        justify-content: space-between;
+        width:143px;
+        padding:0;
+        margin:0;
+    }
+
+    .snsNav ul li img{
+        display:block;
+        width: 32px;
+        height: 32px;
+
+    }
+
+    .footerContainer > p{
+        margin-top:24px;
+        margin-bottom: 12px;
+    }
+
+    .footerTaiwanLogo {
+        position: absolute; /* 絶対位置指定 */
+        left: 10px; /* 左端に配置 */
+
+    }
+
+    .footerTaiwanLogo img {
+        width: 71px; /* 必要に応じてサイズを調整 */
+        height: 28px; /* 高さを自動調整 */
+    }
+
+    .copyRight {
+        border-top: 1px solid #6CBAD8;
+        max-width: 100%;
+    }
+
+
+    /*  */
+    /*  */
+    /* PC版のサイズ調整 */
+    /*  */
+    /*  */
+
+    @media screen and (min-width: 768px) {
+
+
+    .logo {
+        width: 133px;
+        height: 54px;
+    }
+
+    .cityName {
+        transform: translateX(-20px); /* 任意の値に調整 */
+        text-align: left; /* 必要に応じて左寄せにする */
+    }
+
+    .cityName img {
+        max-width: 100%;
+        width: 300px;
+        height: 539px;
+        display: block;
+        position: relative;
+        margin-top: -20px;
+    }
+
+    /* ヘッダー部分 */
+    header{
+        max-width: 1366px;
+        height: 768px;
+        width:100%;
+        background: url(../images/pcTaichuFullHaikei.png) no-repeat right center/cover;
+    }
+    .headerContainer{
+        margin:0 83px;
+        height: 100%;
+        border-right: 1px solid #FF0000;
+        border-left: 1px solid #FF0000;
+        position:relative;
+    }    
+    header .headerContainer .logo img{
+        width:133px;
+        height: 54px;
+    }
+    header .headerContainer .logo{
+        position:absolute;
+        top:20px;
+        left:20px;
+    } 
+    .navButton,
+    .menu{
+        display:none;
+    }
+    header .navigation{
+        top:20px;
+        left: 590px;
+        background: none;
+        height:auto;
+        margin:0;
+        padding:0;
+        text-decoration: none;
+
+    }
+
+    .globalNav ul{
+        display: flex;
+        width: 644px;
+        justify-content: space-between;
+        z-index: 0;
+    }
+    .globalNav ul li{
+        margin:0;
+        list-style: none;
+    }
+    .globalNav ul li a{
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color:#FFFFFF;
+        text-decoration: none;
+    }
+    header .snsIcons{
+        position:absolute;
+        bottom:50px;
+    }
+    header .snsIcons nav ul li{
+        margin-bottom:30px;
+    }
+    header h1{
+        position:absolute;
+        top: 94px;
+        left:280px;
+    }    
+    header h1 img{
+        width: 300px;
+        height: 540px;
+    }
+    header .cityGuide{
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: bold;
+        position:absolute;
+        bottom:20px;
+        right:20px;
+        width: 467px;  
+    }
+
+
+    .cityNameText {
+        font-size: 20px;
+        margin-right: 20px;
+        width: 467px;
+        height: 96px;
+    }
+
+    .mainContainer {
+        font-size: 20px;
+        margin:0 83px;
+
+    }
+
+    #taityuunAttrction {
+        display: inline;
+        width: 50%;
+    }
+
+
+    .subTitle {
+        background-image: url(../images/pcTitleHaikei.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        margin-left: 15px;    
+        text-align: left;  
+        margin-bottom: 80px;  
+    }
+
+    .subTitle h2 {
+        margin-left: 110px;
+    }
+
+
+    .containerA {
+        display: flex;
+        margin-bottom: 20px;
+
+    }
+
+
+    .containerA .column {
+        width: 600px;
+        height: 360px;
+        margin-bottom: 40px;
+        margin-left: 15px;
+    }
+
+    .containerB {
+        display: flex;
+        margin-bottom: 100px;
+    }
+
+
+    .containerB .column {
+        width: 600px;
+        height: 144px;
+        margin-bottom: 50px;
+        margin-left: 15px;
+        object-fit: cover;
+    }  
+
+    
+    .attractionimg {
+        height: 360px;
+        width: 600px;
+        object-fit: cover;  
+    }
+
+    .sp {
+        display: none;
+    }
+    
+
+    #attractionText {
+        font-size: 20px;
+    }
+
+    .pc {
+        display: block;
+        max-width: 100%;
+        height: auto; /* アスペクト比を保つために推奨 */
+    }
+    
+    .museumTextPC {
+        width: 420px;
+        margin-left: 20px;
+    }
+
+    
+
+    #museumText {
+        width: 400px;
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 36px;
+    }
+
+    h6 {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        justify-content: start;
+    }
+
+    .column {
+        width: 600px;
+        padding: 20px;
+    }
+    
+
+    .column img {
+        max-width: 100%;
+        height: 270px; 
+        width: 530px;
+    }
+
+    #museum-Btn {
+        font-size: 20px;
+        width: 212px;
+        height: 76px;
+        padding-right: 30px;
+        padding-top: 17px;
+        margin-top: 20px;
+    }
+
+    .museum {
+        margin-left: -420px;
+    }
+
+    .subTitleC {
+        background-image: url(../images/pcTitleHaikei.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        margin-left: 15px;    
+        text-align: left;  
+        margin-bottom: 80px;
+    } 
+
+    h7 {
+        font-size: 36px;
+    }
+
+
+    .sweets {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .sweetsContainer {
+        margin-left: 75px;
+        width: 420px;
+        
+    }
+
+    .sweetsContainer p {
+        font-size: 20px;   
+    }
+
+
+    .containerC {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .containerC .column p {
+        font-size: 20px;
+        margin-top: 60px;
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    
+    
+    .column img {
+        max-width: 100%;
+        height: 346px;
+        width: 560px;
+    }
+
+    .sweets-SubImg {
+        width: 600px;
+        height: 600px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .columnA {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .columnA img {  
+        margin: 0 160px;
+        height: auto;
+        display: block;
+    }
+
+  .leftColumn {
+    flex: 1;
+    padding: 10px;
+    margin-top: 170px;
+  }
+  
+  .rightColumn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+
+    footer{
+        max-width: 1366px;
+        font-size: 20px;
+    }
+
+    .flag img {
+        width: 64px;
+        height: 48px;
+    }
+
+    .footerNav nav{
+        width: 100%;
+    }
+
+    .footerNav{
+        margin:0;
+        margin-left:103px;
+        margin-bottom:20px;
+        flex-basis: 33%;
+    }
+
+    .footerNav ul li {
+        font-size: 20px;
+    }
+
+    .pcFooterContents{
+        display:flex;
+        justify-content:left;
+    }
+
+
+      .footerUnder{
+        flex-basis:66%;
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .footerTaiwanLogo img {
+        width: 256px;
+        height:103px;
+        position: relative;
+        bottom: 150px;
+        left: 770px;
+    } 
+
+
+    .copyRight {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #solid {
+        width: 480px;
+        margin-top: 80px;   
+    } 
+    }
+    
