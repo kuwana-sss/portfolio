@@ -285,6 +285,10 @@ main p {
 .rink {
   font-weight: bold;
 }
+.prodactText .icon img{
+  width: 35px;
+  height: 35px;
+}
 
 
 footer {
